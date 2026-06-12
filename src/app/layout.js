@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
+import Navbar from "../components/Navbar";
+
+
 
 
 const geistSans = Geist({
@@ -30,9 +31,11 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
       </head>
-      <body className="min-h-full flex flex-col"><Navbar />
+      <body className="min-h-full flex flex-col">
+        <Navbar />
         <main>{children}</main>
-        <Footer /></body>
+        {/* <Footer /> */}
+        </body>
     </html>
   );
 }

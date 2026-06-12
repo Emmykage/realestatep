@@ -4,13 +4,13 @@ import { useState } from 'react'
 import { Search, ChevronDown } from 'lucide-react'
 
 export default function SearchBar() {
-  const [tab, setTab] = useState<'Buy' | 'Rent' | 'Sell'>('Buy')
+  const [tab, setTab] = useState('Buy')
 
   return (
     <div className="bg-white rounded-2xl shadow-2xl shadow-slate-200/80 p-2 max-w-3xl w-full">
       {/* Tabs */}
       <div className="flex gap-1 mb-3 px-1 pt-1">
-        {(['Buy', 'Rent', 'Sell'] as const).map((t) => (
+        {(['Buy', 'Rent', 'Sell'] ).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}

@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { ArrowRight, Shield, TrendingUp, Users, Star, CheckCircle2 } from 'lucide-react'
-import SearchBar  from '@/components/SearchBar'
-import StatsRow   from '@/components/StatsRow'
-import PropertyCard, { Property } from '@/components/PropertyCard'
+import StatsRow from '../components/StatsRow'
+import PropertyCard from '../components/PropertyCard'
+import SearchBar from '../components/SearchBar'
 
-const featuredProperties: Property[] = [
+
+
+const featuredProperties = [
   {
     id: 1,
     title:     'The Whitmore Penthouse',

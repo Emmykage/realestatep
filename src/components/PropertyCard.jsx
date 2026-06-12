@@ -1,21 +1,7 @@
 import Link from 'next/link'
 import { Bed, Bath, Maximize, MapPin, Heart } from 'lucide-react'
 
-export interface Property {
-  id:       number
-  title:    string
-  address:  string
-  price:    string
-  beds:     number
-  baths:    number
-  sqft:     string
-  type:     string
-  tag?:     string
-  imgColor: string
-  imgAccent:string
-}
-
-export default function PropertyCard({ p }: { p: Property }) {
+export default function PropertyCard({ p }) {
   return (
     <div className="card-property group">
       {/* Image placeholder with color */}

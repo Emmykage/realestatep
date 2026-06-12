@@ -1,7 +1,7 @@
 import { Sliders } from 'lucide-react'
-import PropertyCard, { Property } from '@/components/PropertyCard'
+import PropertyCard from '../../components/PropertyCard'
 
-const allProperties: Property[] = [
+const allProperties= [
   { id:1,  title:'The Whitmore Penthouse', address:'Upper East Side, NY',   price:'$4,250,000', beds:4, baths:3, sqft:'3,800 sqft', type:'Penthouse', tag:'New',      imgColor:'#B8C9E1', imgAccent:'#7F99BC' },
   { id:2,  title:'Sunridge Estate',        address:'Beverly Hills, CA',     price:'$7,900,000', beds:6, baths:5, sqft:'6,200 sqft', type:'Villa',      tag:'Featured', imgColor:'#D4C5B0', imgAccent:'#A8906E' },
   { id:3,  title:'Harbor View Loft',       address:'South Beach, Miami',    price:'$1,850,000', beds:2, baths:2, sqft:'1,950 sqft', type:'Loft',                       imgColor:'#B5C9C0', imgAccent:'#6E9E8E' },
