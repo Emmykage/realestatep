@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -29,9 +25,13 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/components/StatsRow.jsx", "src/components/SearchBar.jsx", "src/components/PropertyCard.jsx", "src/components/Navbar.jsx", "src/components/Footer.jsx", "src/app/properties/page.jsx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "src/components/StatsRow.jsx",
+    "src/components/SearchBar.jsx",
+    "src/components/PropertyCard.jsx",
+    "src/components/Navbar.jsx",
+    "src/components/Footer.jsx",
+    "src/app/propertiesi/page.jsx"
+  ],
+  "exclude": ["node_modules"]
 }
