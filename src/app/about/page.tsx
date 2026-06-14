@@ -144,7 +144,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-4"
             >
-              About Oparah Realty
+              About FlatEarth Realty
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -153,7 +153,7 @@ export default function AboutPage() {
               Nigeria's Most Trusted Property Partner
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/60 text-lg leading-relaxed mb-6">
-              For over 12 years, Oparah Realty has navigated the complexities of Nigerian real
+              For over 12 years, FlatEarth Realty has navigated the complexities of Nigerian real
               estate so our clients don't have to. From Banana Island penthouses to first-home
               apartments in Surulere, we bring the same rigour to every deal.
             </motion.p>
@@ -174,7 +174,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F1114]/80 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-5">
-                <div className="text-white font-display font-bold text-xl">Chukwuemeka Oparah</div>
+                <div className="text-white font-display font-bold text-xl">Aka Yakaya</div>
                 <div className="text-[#8DC63F] text-sm mt-1">
                   Founder & CEO · 12+ Years in Lagos Real Estate
                 </div>

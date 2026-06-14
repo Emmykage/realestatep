@@ -129,7 +129,7 @@ export default function Navbar() {
             O
           </div>
           <span className="text-white font-display font-bold text-lg">
-            <span className="font-black">Oparah</span>{' '}
+            <span className="font-black">FlatEarth</span>{' '}
             <span className="font-normal text-white/70">Realty</span>
           </span>
         </button>

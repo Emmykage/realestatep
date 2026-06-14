@@ -146,6 +146,7 @@ export default function HomePage() {
     hidden: { opacity: 0, y: 32 },
     show: {
       opacity: 1,
+
       y: 0,
       transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
     },
@@ -403,7 +404,7 @@ export default function HomePage() {
       {/* 3D Scanner */}
       <PropertyScanner />
 
-      {/* Why Oparah */}
+      {/* Why FlatEarth */}
       <section className="bg-[#0F1114] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
