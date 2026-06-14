@@ -2,8 +2,10 @@
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 import { useState } from 'react';
 import { PROPERTIES } from '../../data';
+import { useRouter } from 'next/navigation';
 
 function PropertiesPage() {
+  const router = useRouter();
   const [filter, setFilter] = useState('All');
   const filtered = filter === 'All' ? PROPERTIES : PROPERTIES.filter((p) => p.type === filter);
   const fadeUp = {
@@ -58,6 +60,7 @@ function PropertiesPage() {
           <AnimatePresence>
             {filtered.map((p, i) => (
               <motion.div
+                onClick={router.push(`/properties/${p.id}`)}
                 key={p.id}
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}

@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Menu, X, Phone } from 'lucide-react';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import { NAV_LINKS } from '../constants/global';
 import { useRouter } from 'next/navigation';
@@ -124,7 +123,7 @@ export default function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <button onClick={() => navTo('home')} className="flex items-center gap-2">
+        <button onClick={() => navTo('/')} className="flex items-center gap-2">
           <div className="w-7 h-7 rounded bg-[#8DC63F] flex items-center justify-center text-black font-black text-sm">
             O
           </div>
