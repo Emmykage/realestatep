@@ -186,7 +186,7 @@ export default function Navbar() {
                 onClick={() => navTo(`/${link}`)}
                 className="block w-full text-left text-white/70 hover:text-[#8DC63F] py-2 text-base transition-colors"
               >
-                {link}
+                {label}
               </button>
             ))}
           </motion.div>
