@@ -4,6 +4,8 @@ import VirtualTourPanel from '../../../components/virtualTourPanel/VirtualTourPa
 import { PROPERTIES, PROPERTY_DETAILS } from '../../../data';
 import { useParams } from 'next/navigation';
 import { useRef, useState } from 'react';
+import Lightbox from '../../../components/lightBox';
+import ROICalculator from '../../../components/ROICalculator';
 export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
   const { id } = useParams();
   const details = PROPERTY_DETAILS[id] || PROPERTY_DETAILS[1];

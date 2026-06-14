@@ -1,10 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import { useCallback, useEffect, useRef, useState } from 'react';
 export default function VirtualTourPanel({ images }) {
   const [angle, setAngle] = useState(0);
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startAngle, setStartAngle] = useState(0);
   const containerRef = useRef(null);
+  const G = '#8DC63F';
 
   const imgIndex =
     Math.floor((((angle % 360) + 360) % 360) / (360 / images.length)) % images.length;
