@@ -180,10 +180,10 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-black/95 border-t border-white/10 px-6 py-4 space-y-4"
           >
-            {NAV_LINKS.map((link) => (
+            {NAV_LINKS.map(({ link, label }) => (
               <button
                 key={link}
-                onClick={() => navTo(pageMap[link] || 'home')}
+                onClick={() => navTo(`/${link}`)}
                 className="block w-full text-left text-white/70 hover:text-[#8DC63F] py-2 text-base transition-colors"
               >
                 {link}
