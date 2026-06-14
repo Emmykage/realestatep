@@ -3,6 +3,7 @@ import { ArrowRight, Shield, TrendingUp, Users, Star, CheckCircle2 } from 'lucid
 import StatsRow from '../components/StatsRow'
 import PropertyCard from '../components/PropertyCard'
 import SearchBar from '../components/SearchBar'
+import HeroBanner from '../components/hero/Hero'
 
 
 
@@ -124,7 +125,6 @@ export default function HomePage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-slate-50 pt-20">
 
-        {/* Geometric background accent */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-gold-50 opacity-60" />
           <div className="absolute top-1/2 -left-60 w-[500px] h-[500px] rounded-full bg-slate-100 opacity-70" />
@@ -175,6 +175,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HeroBanner />
 
       {/* ── STATS ────────────────────────────────────────── */}
       <StatsRow />

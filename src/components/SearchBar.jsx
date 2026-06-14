@@ -8,7 +8,6 @@ export default function SearchBar() {
 
   return (
     <div className="bg-white rounded-2xl shadow-2xl shadow-slate-200/80 p-2 max-w-3xl w-full">
-      {/* Tabs */}
       <div className="flex gap-1 mb-3 px-1 pt-1">
         {(['Buy', 'Rent', 'Sell'] ).map((t) => (
           <button
@@ -25,7 +24,6 @@ export default function SearchBar() {
         ))}
       </div>
 
-      {/* Inputs */}
       <div className="flex flex-col sm:flex-row gap-2">
         <div className="flex-1 flex items-center gap-3 px-4 py-3 bg-slate-50 rounded-xl">
           <Search size={16} className="text-slate-400 shrink-0" />
