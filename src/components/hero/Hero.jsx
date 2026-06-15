@@ -1,16 +1,10 @@
-"use client";
+'use client';
 // import SearchBar from "./SearchBar";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-  useInView,
-} from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 
-import SearchBar from "../SearchBar";
-import { useState } from "react";
-import { STATS } from "../../data";
+import SearchBar from '../SearchBar';
+import { useState } from 'react';
+import { STATS } from '../../data';
 
 // export default function HeroBanner() {
 //   return (
@@ -69,7 +63,7 @@ import { STATS } from "../../data";
 // }
 
 function HeroBanner() {
-  const [tab, setTab] = useState("For Sale");
+  const [tab, setTab] = useState('For Sale');
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 600], [0, 160]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
@@ -79,36 +73,27 @@ function HeroBanner() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-gold-50 opacity-60" />
         <div className="absolute top-1/2 -left-60 w-[500px] h-[500px] rounded-full bg-slate-100 opacity-70" />
-        {/* Grid lines */}
-        <svg
+        {/* <svg
           className="absolute inset-0 w-full h-full opacity-[0.035]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <pattern
-              id="grid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 40 0 L 0 0 0 40"
-                fill="none"
-                stroke="#0F172A"
-                strokeWidth="1"
-              />
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0F172A" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+        </svg> */}
       </div>
       {/* Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0 scale-110">
-        <img
-          src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1800&q=80"
-          alt=""
+        <video
+          autoPlay
+          loop
+          muted
+          src="/video/backgrouund-video.mp4"
           className="w-full h-full object-cover"
-        />
+        ></video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0F1114]" />
       </motion.div>
 
@@ -117,8 +102,8 @@ function HeroBanner() {
         className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(#8DC63F 1px,transparent 1px),linear-gradient(90deg,#8DC63F 1px,transparent 1px)",
-          backgroundSize: "80px 80px",
+            'linear-gradient(#8DC63F 1px,transparent 1px),linear-gradient(90deg,#8DC63F 1px,transparent 1px)',
+          backgroundSize: '80px 80px',
         }}
       />
 
@@ -154,8 +139,8 @@ function HeroBanner() {
           transition={{ delay: 0.35 }}
           className="text-white/60 text-xl max-w-xl mb-10"
         >
-          We minimise risk & maximise ROI on your real estate investment across
-          Nigeria's prime corridors.
+          We minimise risk & maximise ROI on your real estate investment across Nigeria's prime
+          corridors.
         </motion.p>
 
         {/* Search card */}
@@ -167,14 +152,14 @@ function HeroBanner() {
         >
           {/* Tabs */}
           <div className="flex mb-0 gap-1 bg-black/40 backdrop-blur-md rounded-t-2xl p-1 border-t border-x border-white/10">
-            {["For Sale", "For Rent", "Shortlet"].map((t) => (
+            {['For Sale', 'For Rent', 'Shortlet'].map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
                 className="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200"
                 style={{
-                  background: tab === t ? "#8DC63F" : "transparent",
-                  color: tab === t ? "#000" : "rgba(255,255,255,0.5)",
+                  background: tab === t ? '#8DC63F' : 'transparent',
+                  color: tab === t ? '#000' : 'rgba(255,255,255,0.5)',
                 }}
               >
                 {t}
@@ -200,11 +185,11 @@ function HeroBanner() {
               <option>Penthouse</option>
             </select>
             <motion.button
-              onClick={() => setPage("properties")}
+              onClick={() => setPage('properties')}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
               className="px-7 py-3 rounded-xl font-bold text-black text-sm"
-              style={{ background: "linear-gradient(135deg,#8DC63F,#a8e050)" }}
+              style={{ background: 'linear-gradient(135deg,#8DC63F,#a8e050)' }}
             >
               Search
             </motion.button>
@@ -222,9 +207,7 @@ function HeroBanner() {
         <div className="max-w-5xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-6">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-2xl font-display font-bold text-[#8DC63F]">
-                {s.value}
-              </div>
+              <div className="text-2xl font-display font-bold text-[#8DC63F]">{s.value}</div>
               <div className="text-white/40 text-xs mt-1 font-mono uppercase tracking-wider">
                 {s.label}
               </div>

@@ -1232,7 +1232,6 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
         )}
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightboxOpen && (
           <Lightbox
