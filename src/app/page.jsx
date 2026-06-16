@@ -1,11 +1,10 @@
 'use client';
 import Link from 'next/link';
-import { ArrowRight, Shield, TrendingUp, Users, Star, CheckCircle2 } from 'lucide-react';
+import { Shield, TrendingUp, Users } from 'lucide-react';
 import StatsRow from '../components/StatsRow';
-import PropertyCard from '../components/PropertyCard';
-import SearchBar from '../components/SearchBar';
+
 import HeroBanner from '../components/hero/Hero';
-import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BLOG_POSTS, PROPERTIES } from '../data';
 import PropertyScanner from '../components/propertyScanner/PropertyScanner';
 
@@ -158,7 +157,6 @@ export default function HomePage() {
     <>
       <HeroBanner />
 
-      {/* ── STATS ────────────────────────────────────────── */}
       <StatsRow />
 
       {/* ── FEATURED PROPERTIES ──────────────────────────── */}
