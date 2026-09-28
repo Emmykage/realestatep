@@ -118,7 +118,7 @@ function HeroBanner() {
           className="mb-6"
         >
           <span className="inline-block bg-[#8DC63F]/10 border border-[#8DC63F]/30 text-[#8DC63F] font-mono text-xs tracking-widest uppercase px-4 py-2 rounded-full">
-            Lagos · Abuja · Port Harcourt
+            IKOYI • VICTORIA ISLAND • LEKKI IKOTA • CHEVRON• AJAH • IBEJU LEKKI • EPE
           </span>
         </motion.div>
 

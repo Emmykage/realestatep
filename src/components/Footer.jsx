@@ -35,7 +35,7 @@ export default function Footer() {
               className="flex items-center gap-2.5 hover:text-white transition-colors"
             >
               <Phone size={14} className="text-gold-400 shrink-0" />
-              +1 (555) 010-0200
+              +2348131529888{' '}
             </a>
             <a
               href="mailto:hello@luxerealty.com"
@@ -46,7 +46,7 @@ export default function Footer() {
             </a>
             <span className="flex items-center gap-2.5">
               <MapPin size={14} className="text-gold-400 shrink-0" />
-              340 Park Avenue, New York, NY 10022
+              Office 3, Magnuel Emporium plaza, Canaan Estate Sangotedo, Lagos, Nigeria{' '}
             </span>
           </div>
 

@@ -1,9 +1,9 @@
 const stats = [
-  { value: '4,200+', label: 'Homes Sold' },
-  { value: '$3.8B',  label: 'Total Value' },
-  { value: '17+',   label: 'Years Active' },
-  { value: '98%',   label: 'Client Satisfaction' },
-]
+  { value: '35+', label: 'Homes Sold' },
+  { value: 'NGN 1.2B', label: 'ToTeam Sales 2026' },
+  { value: '4 +', label: 'Years Active' },
+  { value: '98%', label: 'Client Satisfaction' },
+];
 
 export default function StatsRow() {
   return (
@@ -19,5 +19,5 @@ export default function StatsRow() {
         </div>
       </div>
     </section>
-  )
+  );
 }
