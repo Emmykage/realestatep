@@ -23,7 +23,7 @@ export default function BlogPage() {
             Insights & News
           </motion.p>
           <motion.h1 variants={fadeUp} className="text-5xl font-display font-bold text-white">
-            The FlatEarth Brief
+            The Benol Brief
           </motion.h1>
           <motion.p variants={fadeUp} className="text-white/50 mt-3 text-lg">
             Market intelligence for serious Nigerian real estate investors.

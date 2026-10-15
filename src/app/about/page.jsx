@@ -71,7 +71,7 @@ export default function AboutPage() {
               variants={fadeUp}
               className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-4"
             >
-              About FlatEarth Realty
+              About Benol Property
             </motion.p>
             <motion.h1
               variants={fadeUp}
@@ -80,9 +80,9 @@ export default function AboutPage() {
               Nigeria's Most Trusted Property Partner
             </motion.h1>
             <motion.p variants={fadeUp} className="text-white/60 text-lg leading-relaxed mb-6">
-              For over 12 years, FlatEarth Realty has navigated the complexities of Nigerian real
-              estate so our clients don't have to. From Banana Island penthouses to first-home
-              apartments in Surulere, we bring the same rigour to every deal.
+              For over 12 years, Benol Realty has navigated the complexities of Nigerian real estate
+              so our clients don't have to. From Banana Island penthouses to first-home apartments
+              in Surulere, we bring the same rigour to every deal.
             </motion.p>
             <motion.p variants={fadeUp} className="text-white/40 text-base leading-relaxed">
               Our approach combines deep market intelligence, legal due diligence, and a proprietary
