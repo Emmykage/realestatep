@@ -5,6 +5,15 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-primary-200: #0b5d3b;
+  --color-primary-900: #063027;
+  --color-secondary-600: #d4a017;
+  --color-primary-200: #0b5d3b;
+  --color-light-200: #f5f7f6;
+  --color-light: #6b7280;
+  --font-mono: var(--font-geist-mono);
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -24,3 +33,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* How I would apply it */
+/* - Navbar: White background with a forest-green logo and dark navigation text.
+- Hero section: A high-quality Lagos property image with a dark green overlay and white headline.
+- Search button: Forest green; use gold for selected filters and secondary actions.
+- Property cards: White backgrounds, subtle borders, green prices, and small green or gold listing badges.
+- Footer: Dark green with white text and restrained gold accents.
+One design rule: Keep green dominant, gold occasional, and white plentiful. Too much gold can make a real-estate site look less professional. */
