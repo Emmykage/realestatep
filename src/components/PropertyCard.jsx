@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { Bed, Bath, Maximize, MapPin, Heart } from 'lucide-react'
+import Link from 'next/link';
+import { Bed, Bath, Maximize, MapPin, Heart } from 'lucide-react';
 
 export default function PropertyCard({ p }) {
   return (
@@ -15,20 +15,35 @@ export default function PropertyCard({ p }) {
           </span>
         )}
         <button className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors group/heart">
-          <Heart size={14} className="text-slate-400 group-hover/heart:text-red-500 transition-colors" />
+          <Heart
+            size={14}
+            className="text-slate-400 group-hover/heart:text-red-500 transition-colors"
+          />
         </button>
 
         {/* Decorative building silhouette */}
-        <svg className="absolute bottom-0 left-0 w-full opacity-10" viewBox="0 0 400 80" preserveAspectRatio="none">
-          <rect x="20"  y="30" width="40" height="50" fill="white"/>
-          <rect x="80"  y="15" width="55" height="65" fill="white"/>
-          <rect x="155" y="40" width="35" height="40" fill="white"/>
-          <rect x="210" y="10" width="65" height="70" fill="white"/>
-          <rect x="295" y="25" width="50" height="55" fill="white"/>
-          <rect x="355" y="45" width="40" height="35" fill="white"/>
+        <svg
+          className="absolute bottom-0 left-0 w-full opacity-10"
+          viewBox="0 0 400 80"
+          preserveAspectRatio="none"
+        >
+          <rect x="20" y="30" width="40" height="50" fill="white" />
+          <rect x="80" y="15" width="55" height="65" fill="white" />
+          <rect x="155" y="40" width="35" height="40" fill="white" />
+          <rect x="210" y="10" width="65" height="70" fill="white" />
+          <rect x="295" y="25" width="50" height="55" fill="white" />
+          <rect x="355" y="45" width="40" height="35" fill="white" />
           {/* Windows */}
-          {[30,45,90,105,165,220,235,250,305,320,365].map((x, i) => (
-            <rect key={i} x={x} y={i % 2 === 0 ? 35 : 50} width="10" height="8" fill="white" opacity="0.6"/>
+          {[30, 45, 90, 105, 165, 220, 235, 250, 305, 320, 365].map((x, i) => (
+            <rect
+              key={i}
+              x={x}
+              y={i % 2 === 0 ? 35 : 50}
+              width="10"
+              height="8"
+              fill="white"
+              opacity="0.6"
+            />
           ))}
         </svg>
 
@@ -69,5 +84,5 @@ export default function PropertyCard({ p }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

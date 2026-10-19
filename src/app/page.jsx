@@ -343,7 +343,7 @@ export default function HomePage() {
             <div>
               <motion.p
                 variants={fadeUp}
-                className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-2"
+                className="text-[#8DC63F]  text-sm tracking-widest uppercase mb-2"
               >
                 Curated for You
               </motion.p>
@@ -385,6 +385,12 @@ export default function HomePage() {
                   >
                     {p.tag}
                   </span>
+                  <button className="absolute top-4 right-4 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors group/heart">
+                    <Heart
+                      size={14}
+                      className="text-slate-400 group-hover/heart:text-red-500 transition-colors"
+                    />
+                  </button>
                 </div>
                 <div className="p-5">
                   <div className="text-[#8DC63F] font-bold text-xl mb-1">{p.price}</div>
@@ -417,7 +423,7 @@ export default function HomePage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-3"
+              className="text-[#8DC63F]  text-sm tracking-widest uppercase mb-3"
             >
               Why Choose Us
             </motion.p>
@@ -455,7 +461,7 @@ export default function HomePage() {
                   {item.n}
                 </div>
                 <div className="relative">
-                  <div className="text-[#8DC63F] font-mono text-sm mb-4">{item.n}</div>
+                  <div className="text-[#8DC63F] text-sm mb-4">{item.n}</div>
                   <div className="text-white font-display font-bold text-xl mb-3">{item.title}</div>
                   <div className="text-white/50 leading-relaxed">{item.body}</div>
                 </div>
@@ -534,7 +540,7 @@ export default function HomePage() {
             <div>
               <motion.p
                 variants={fadeUp}
-                className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-2"
+                className="text-[#8DC63F] text-sm tracking-widest uppercase mb-2"
               >
                 Market Intelligence
               </motion.p>
@@ -568,7 +574,7 @@ export default function HomePage() {
                   <h3 className="text-white font-display font-semibold text-base leading-snug mb-2">
                     {post.title}
                   </h3>
-                  <div className="text-white/30 font-mono text-xs">{post.date}</div>
+                  <div className="text-white/30 text-xs">{post.date}</div>
                 </div>
               </motion.div>
             ))}
