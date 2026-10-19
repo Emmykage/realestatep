@@ -60,7 +60,7 @@ function PropertiesPage() {
           <AnimatePresence>
             {filtered.map((p, i) => (
               <motion.div
-                onClick={router.push(`/properties/${p.id}`)}
+                onClick={() => router.push(`/properties/${p.id}`)}
                 key={p.id}
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}

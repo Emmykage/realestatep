@@ -16,11 +16,13 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-2 space-y-5">
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="w-8 h-8 rounded-lg bg-gold-500 flex items-center justify-center">
-              <span className="font-display text-slate-900 font-bold text-sm">L</span>
-            </span>
-            <span className="font-display text-xl font-bold text-white tracking-tight">
-              Luxe<span className="text-gold-400">Realty</span>
+            <div className="flex h-7 w-7 items-center justify-center rounded bg-[#8DC63F] text-sm font-black text-black">
+              O
+            </div>
+
+            <span className="font-display text-lg font-bold text-white">
+              <span className="font-black">Benol</span>{' '}
+              <span className="font-normal text-white/70">Realty</span>
             </span>
           </Link>
 
@@ -38,11 +40,11 @@ export default function Footer() {
               +2348131529888{' '}
             </a>
             <a
-              href="mailto:hello@luxerealty.com"
+              href="mailto:hello@BenolProperty.com"
               className="flex items-center gap-2.5 hover:text-white transition-colors"
             >
               <Mail size={14} className="text-gold-400 shrink-0" />
-              hello@luxerealty.com
+              hello@BenolProperty.com
             </a>
             <span className="flex items-center gap-2.5">
               <MapPin size={14} className="text-gold-400 shrink-0" />
@@ -88,7 +90,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© 2025 LuxeRealty Inc. All rights reserved.</p>
+          <p>© 2025 BenolProperty Inc. All rights reserved.</p>
           <div className="flex gap-5">
             <Link href="#" className="hover:text-slate-300 transition-colors">
               Privacy Policy

@@ -109,7 +109,7 @@ const testimonials = [
     name: 'Sarah Okonkwo',
     role: 'Buyer, Manhattan',
     quote:
-      'LuxeRealty found us a home that ticked every single box — and closed in 18 days. Effortless.',
+      'BenolProperty found us a home that ticked every single box — and closed in 18 days. Effortless.',
     stars: 5,
   },
   {
@@ -234,7 +234,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="section-eyebrow">Why LuxeRealty</p>
+              <p className="section-eyebrow">Why BenolProperty</p>
               <h2 className="section-heading mb-6">
                 More than listings.
                 <br />
@@ -349,13 +349,13 @@ export default function HomePage() {
                 Featured Listings
               </motion.h2>
             </div>
-            <motion.button
+            <Link
               variants={fadeUp}
-              onClick={() => setPage('properties')}
+              href="/properties"
               className="hidden md:block px-6 py-3 rounded-xl border border-[#8DC63F]/40 text-[#8DC63F] text-sm font-semibold hover:bg-[#8DC63F]/10 transition-all"
             >
               View All Properties →
-            </motion.button>
+            </Link>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

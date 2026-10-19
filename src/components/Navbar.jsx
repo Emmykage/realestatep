@@ -1,36 +1,32 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
 import { AnimatePresence, motion } from 'framer-motion';
 import { NAV_LINKS } from '../constants/global';
 import { useRouter } from 'next/navigation';
 import { FaPhoneAlt } from 'react-icons/fa';
 
-const navLinks = [
-  { label: 'Properties', href: '/properties' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Contact', href: '/contact' },
-];
-
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [page, setPage] = useState('home');
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [desktopAboutOpen, setDesktopAboutOpen] = useState(false);
 
   const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+
     window.addEventListener('scroll', onScroll);
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navTo = (p) => {
+  const navTo = (path) => {
     setMobileMenu(false);
-    router.push(p);
+    setAboutOpen(false);
+    setDesktopAboutOpen(false);
+    router.push(path);
   };
 
   return (
@@ -45,76 +41,223 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.08)' : 'none',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <button onClick={() => navTo('/')} className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded bg-[#8DC63F] flex items-center justify-center text-black font-black text-sm">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+        {/* Logo */}
+        <button
+          onClick={() => navTo('/')}
+          className="flex items-center gap-2"
+          aria-label="Benol Realty home"
+        >
+          <div className="flex h-7 w-7 items-center justify-center rounded bg-[#8DC63F] text-sm font-black text-black">
             O
           </div>
-          <span className="text-white font-display font-bold text-lg">
+
+          <span className="font-display text-lg font-bold text-white">
             <span className="font-black">Benol</span>{' '}
             <span className="font-normal text-white/70">Realty</span>
           </span>
         </button>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map(({ link, label }) => (
-            <button
-              key={link}
-              onClick={() => navTo(`/${link}`)}
-              className="text-sm text-white/70 hover:text-white transition-colors font-medium"
-            >
-              {label}
-            </button>
-          ))}
+        {/* Desktop navigation */}
+        <div className="hidden items-center gap-8 md:flex">
+          {NAV_LINKS.map(({ link, label, sub }) => {
+            const hasSubmenu = Boolean(sub?.length);
+            const isAbout = link === 'about';
+
+            return (
+              <div
+                key={link}
+                className="relative"
+                onMouseEnter={() => {
+                  if (isAbout && hasSubmenu) {
+                    setDesktopAboutOpen(true);
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (isAbout) {
+                    setDesktopAboutOpen(false);
+                  }
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (hasSubmenu) {
+                      setDesktopAboutOpen((prev) => !prev);
+                    } else {
+                      navTo(`/${link}`);
+                    }
+                  }}
+                  aria-expanded={hasSubmenu ? desktopAboutOpen : undefined}
+                  className="flex items-center gap-2 py-3 text-sm font-medium text-white/70 transition-colors hover:text-white"
+                >
+                  {label}
+
+                  {hasSubmenu && (
+                    <span
+                      className={`text-xs transition-transform ${
+                        desktopAboutOpen ? 'rotate-180' : ''
+                      }`}
+                    >
+                      ▼
+                    </span>
+                  )}
+                </button>
+
+                {/* Desktop dropdown */}
+                {hasSubmenu && (
+                  <AnimatePresence>
+                    {desktopAboutOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.18 }}
+                        className="absolute left-0 top-full z-50 min-w-52 pt-2"
+                      >
+                        <div className="overflow-hidden rounded-xl border border-white/10 bg-[#171A1F] py-2 shadow-xl">
+                          {sub.map((item) => (
+                            <button
+                              key={item.link}
+                              type="button"
+                              onClick={() => navTo(`/${item.link}`)}
+                              className="block w-full px-4 py-3 text-left text-sm text-white/70 transition-colors hover:bg-white/5 hover:text-[#8DC63F]"
+                            >
+                              {item.label}
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
+            );
+          })}
+
+          {/* Phone */}
           <a
             href="tel:+2348050480659"
-            className="flex items-center gap-2 text-[#8DC63F] text-sm font-semibold"
+            className="flex items-center gap-2 text-sm font-semibold text-[#8DC63F]"
           >
-            <span>
-              <FaPhoneAlt />
-            </span>{' '}
+            <FaPhoneAlt />
             +234 805 048 0659
           </a>
         </div>
 
         {/* Mobile menu toggle */}
-        <button onClick={() => setMobileMenu(!mobileMenu)} className="md:hidden text-white p-2">
+        <button
+          type="button"
+          onClick={() => setMobileMenu((prev) => !prev)}
+          className="p-2 text-white md:hidden"
+          aria-label={mobileMenu ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileMenu}
+        >
           <div className="space-y-1.5">
             <div
-              className="w-6 h-0.5 bg-white transition-all"
-              style={{ transform: mobileMenu ? 'rotate(45deg) translate(4px,4px)' : '' }}
+              className="h-0.5 w-6 bg-white transition-all"
+              style={{
+                transform: mobileMenu ? 'rotate(45deg) translate(4px,4px)' : '',
+              }}
             />
+
             <div
-              className="w-6 h-0.5 bg-white transition-all"
+              className="h-0.5 w-6 bg-white transition-all"
               style={{ opacity: mobileMenu ? 0 : 1 }}
             />
+
             <div
-              className="w-6 h-0.5 bg-white transition-all"
-              style={{ transform: mobileMenu ? 'rotate(-45deg) translate(4px,-4px)' : '' }}
+              className="h-0.5 w-6 bg-white transition-all"
+              style={{
+                transform: mobileMenu ? 'rotate(-45deg) translate(4px,-4px)' : '',
+              }}
             />
           </div>
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile navigation */}
       <AnimatePresence>
         {mobileMenu && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 border-t border-white/10 px-6 py-4 space-y-4"
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden border-t border-white/10 bg-black/95 px-6 py-4 md:hidden"
           >
-            {NAV_LINKS.map(({ link, label }) => (
-              <button
-                key={link}
-                onClick={() => navTo(`/${link}`)}
-                className="block w-full text-left text-white/70 hover:text-[#8DC63F] py-2 text-base transition-colors"
+            <div className="space-y-2">
+              {NAV_LINKS.map(({ link, label, sub }) => {
+                const hasSubmenu = Boolean(sub?.length);
+                const isAbout = link === 'about';
+
+                return (
+                  <div key={link}>
+                    {hasSubmenu ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => setAboutOpen((prev) => !prev)}
+                          aria-expanded={aboutOpen}
+                          className="flex w-full items-center justify-between py-3 text-left text-base text-white/70 transition-colors hover:text-[#8DC63F]"
+                        >
+                          {label}
+
+                          <span
+                            className={`text-xs transition-transform ${
+                              aboutOpen ? 'rotate-180' : ''
+                            }`}
+                          >
+                            ▼
+                          </span>
+                        </button>
+
+                        <AnimatePresence>
+                          {aboutOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="ml-3 border-l border-white/10 pl-4">
+                                {sub.map((item) => (
+                                  <button
+                                    key={item.link}
+                                    type="button"
+                                    onClick={() => navTo(`/${item.link}`)}
+                                    className="block w-full py-3 text-left text-sm text-white/60 transition-colors hover:text-[#8DC63F]"
+                                  >
+                                    {item.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => navTo(`/${link}`)}
+                        className="block w-full py-3 text-left text-base text-white/70 transition-colors hover:text-[#8DC63F]"
+                      >
+                        {label}
+                      </button>
+                    )}
+                  </div>
+                );
+              })}
+
+              {/* Mobile phone */}
+              <a
+                href="tel:+2348050480659"
+                className="flex items-center gap-2 py-3 text-sm font-semibold text-[#8DC63F]"
               >
-                {label}
-              </button>
-            ))}
+                <FaPhoneAlt />
+                +234 805 048 0659
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
