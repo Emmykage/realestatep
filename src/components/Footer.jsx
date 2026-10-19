@@ -1,13 +1,28 @@
+import { label } from 'framer-motion/client';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 // import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin } from 'lucide-react'
 
 const footerLinks = {
-  Company: ['About Us', 'Our Team', 'Careers', 'Press'],
-  Properties: ['Buy', 'Rent', 'Sell', 'New Builds'],
-  Resources: ['Blog', 'Guides', 'Market Report', 'FAQ'],
+  Company: [
+    { label: 'About Us', link: '/about' },
+    { label: 'Our Team', link: '/team' },
+    { label: 'Careers', link: '/career' },
+    { label: 'Press', link: '/blog' },
+  ],
+  Properties: [
+    { label: 'Buy', link: '/properties?type=buy' },
+    { label: 'Rent', link: '/properties?type=rent' },
+    { label: 'Sell', link: '/properties/sell' },
+    { label: 'New Builds', link: '/properties?type=new-builds' },
+  ],
+  Resources: [
+    { label: 'Blog', link: '/blog' },
+    { label: 'Guides', link: '/guides' },
+    { label: 'Market Report', link: '/market-report' },
+    { label: 'FAQ', link: '/faq' },
+  ],
 };
-
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -40,11 +55,11 @@ export default function Footer() {
               +2348131529888{' '}
             </a>
             <a
-              href="mailto:hello@BenolProperty.com"
+              href="mailto:contact@benolProperty.com"
               className="flex items-center gap-2.5 hover:text-white transition-colors"
             >
               <Mail size={14} className="text-gold-400 shrink-0" />
-              hello@BenolProperty.com
+              contact@BenolProperty.com
             </a>
             <span className="flex items-center gap-2.5">
               <MapPin size={14} className="text-gold-400 shrink-0" />
@@ -72,13 +87,13 @@ export default function Footer() {
               {category}
             </h4>
             <ul className="space-y-2.5">
-              {links.map((link) => (
+              {links.map(({ link, label }) => (
                 <li key={link}>
                   <Link
-                    href="#"
+                    href={link}
                     className="text-sm text-slate-400 hover:text-white transition-colors"
                   >
-                    {link}
+                    {label}
                   </Link>
                 </li>
               ))}

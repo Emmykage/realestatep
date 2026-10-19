@@ -7,6 +7,7 @@ import HeroBanner from '../components/hero/Hero';
 import { motion } from 'framer-motion';
 import { BLOG_POSTS, PROPERTIES } from '../data';
 import PropertyScanner from '../components/propertyScanner/PropertyScanner';
+import { useRouter } from 'next/navigation';
 
 const featuredProperties = [
   {
@@ -150,6 +151,7 @@ export default function HomePage() {
       transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
     },
   };
+  const router = useRouter();
 
   const stagger = { show: { transition: { staggerChildren: 0.1 } } };
 
@@ -361,6 +363,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROPERTIES.slice(0, 3).map((p, i) => (
               <motion.div
+                onClick={() => router.push(`properties/${p.id}`)}
                 key={p.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
