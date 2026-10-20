@@ -1,7 +1,8 @@
 import { label } from 'framer-motion/client';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
-// import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin } from 'lucide-react'
+import logo from '../assets/logo/logo-transparent.png';
 
 const footerLinks = {
   Company: [
@@ -30,15 +31,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand */}
         <div className="lg:col-span-2 space-y-5">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="flex h-7 w-7 items-center justify-center rounded bg-[#8DC63F] text-sm font-black text-black">
-              O
-            </div>
-
-            <span className="font-display text-lg font-bold text-white">
-              <span className="font-black">Benol</span>{' '}
-              <span className="font-normal text-white/70">Realty</span>
-            </span>
+          <Link href="/" className="block relative h-20 w-40">
+            <Image
+              src={logo}
+              className="w-full h-full absolute object-cover scale-80 mt-2"
+              alt="logo"
+            />
           </Link>
 
           <p className="text-sm leading-relaxed text-slate-400 max-w-xs">

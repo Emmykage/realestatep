@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Shield, TrendingUp, Users } from 'lucide-react';
+import { Heart, Shield, TrendingUp, Users } from 'lucide-react';
 import StatsRow from '../components/StatsRow';
 
 import HeroBanner from '../components/hero/Hero';

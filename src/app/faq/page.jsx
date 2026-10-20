@@ -141,7 +141,7 @@ export default function FAQPage() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#8DC63F]/20 bg-[#8DC63F]/5 px-4 py-2">
             <CircleHelp size={16} className="text-[#8DC63F]" />
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <span className=" text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               Frequently Asked Questions
             </span>
           </div>
@@ -296,7 +296,7 @@ export default function FAQPage() {
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#8DC63F]/10 blur-[90px]" />
 
           <div className="relative">
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <p className="mb-4  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               We're Here to Help
             </p>
 

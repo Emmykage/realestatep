@@ -22,7 +22,7 @@ function ROICalculator({ basePrice, roi }) {
         <span className="text-xl">📊</span>
         <h3 className="text-white font-display font-bold text-lg">ROI Calculator</h3>
         <span
-          className="ml-auto text-xs font-mono px-2 py-1 rounded-full text-black font-bold"
+          className="ml-auto text-xs  px-2 py-1 rounded-full text-black font-bold"
           style={{ background: G }}
         >
           LIVE
@@ -33,7 +33,7 @@ function ROICalculator({ basePrice, roi }) {
         <div>
           <div className="flex justify-between mb-2">
             <span className="text-white/60 text-sm">Investment Amount</span>
-            <span className="text-white font-mono text-sm font-bold">{fmt(investment)}</span>
+            <span className="text-white  text-sm font-bold">{fmt(investment)}</span>
           </div>
           <input
             type="range"
@@ -44,7 +44,7 @@ function ROICalculator({ basePrice, roi }) {
             onChange={(e) => setInvestment(+e.target.value)}
             className="w-full accent-[#8DC63F] cursor-pointer"
           />
-          <div className="flex justify-between text-white/30 font-mono text-xs mt-1">
+          <div className="flex justify-between text-white/30  text-xs mt-1">
             <span>₦50M</span>
             <span>₦2B</span>
           </div>
@@ -52,7 +52,7 @@ function ROICalculator({ basePrice, roi }) {
         <div>
           <div className="flex justify-between mb-2">
             <span className="text-white/60 text-sm">Holding Period</span>
-            <span className="text-white font-mono text-sm font-bold">{years} years</span>
+            <span className="text-white  text-sm font-bold">{years} years</span>
           </div>
           <input
             type="range"
@@ -63,7 +63,7 @@ function ROICalculator({ basePrice, roi }) {
             onChange={(e) => setYears(+e.target.value)}
             className="w-full accent-[#8DC63F] cursor-pointer"
           />
-          <div className="flex justify-between text-white/30 font-mono text-xs mt-1">
+          <div className="flex justify-between text-white/30  text-xs mt-1">
             <span>1yr</span>
             <span>15yrs</span>
           </div>
@@ -108,7 +108,7 @@ function ROICalculator({ basePrice, roi }) {
         ))}
       </div>
 
-      <div className="flex gap-3 text-xs font-mono text-white/30 mt-2">
+      <div className="flex gap-3 text-xs  text-white/30 mt-2">
         <span>Cap. appreciation: {roi.capitalAppreciation}%/yr</span>
         <span>·</span>
         <span>Yield: {roi.rentalYield}%</span>

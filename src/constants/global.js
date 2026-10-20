@@ -5,6 +5,7 @@ export const NAV_LINKS = [
     sub: [
       { link: 'about', label: 'About the Company' },
       { link: 'about/founder', label: 'About Founder' },
+      { link: 'contact', label: 'Contact' },
     ],
   },
   { link: 'properties', label: 'Properties' },

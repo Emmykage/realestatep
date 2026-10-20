@@ -66,7 +66,7 @@ function PropertyScanner() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-3"
+            className="text-[#8DC63F]  text-sm tracking-widest uppercase mb-3"
           >
             3D Property Scanner
           </motion.p>
@@ -121,12 +121,12 @@ function PropertyScanner() {
               {/* HUD overlay */}
               <div className="absolute inset-0 p-5 flex flex-col justify-between pointer-events-none">
                 <div className="flex justify-between items-start">
-                  <div className="text-[#8DC63F] font-mono text-xs space-y-1">
+                  <div className="text-[#8DC63F]  text-xs space-y-1">
                     <div>LAT: 6.4541° N</div>
                     <div>LNG: 3.3947° E</div>
                     <div>ALT: 420m</div>
                   </div>
-                  <div className="text-[#8DC63F] font-mono text-xs text-right space-y-1">
+                  <div className="text-[#8DC63F]  text-xs text-right space-y-1">
                     <div>{scanning ? 'SCANNING...' : found ? 'TARGET LOCKED' : 'STANDBY'}</div>
                     <div>ANGLE: {Math.round(scanAngle)}°</div>
                   </div>
@@ -158,15 +158,13 @@ function PropertyScanner() {
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <div className="bg-black/80 border border-[#8DC63F] rounded-xl p-5 text-center backdrop-blur-sm max-w-xs">
-                        <div className="text-[#8DC63F] font-mono text-xs mb-2">
-                          ◉ TARGET ACQUIRED
-                        </div>
+                        <div className="text-[#8DC63F]  text-xs mb-2">◉ TARGET ACQUIRED</div>
                         <div className="text-white font-display font-bold text-xl">
                           {found.title}
                         </div>
                         <div className="text-white/60 text-sm mt-1">{found.location}</div>
                         <div className="text-[#8DC63F] font-bold text-lg mt-2">{found.price}</div>
-                        <div className="text-white/40 font-mono text-xs mt-1">
+                        <div className="text-white/40  text-xs mt-1">
                           {found.floors} · Verified Listing
                         </div>
                       </div>
@@ -186,7 +184,7 @@ function PropertyScanner() {
                       />
                     </motion.div>
                   )}
-                  <div className="flex justify-between mt-2 text-white/30 font-mono text-xs">
+                  <div className="flex justify-between mt-2 text-white/30  text-xs">
                     <span>LAGOS METRO SCAN v2.1</span>
                     <span>{scanning ? 'PROCESSING' : found ? 'COMPLETE' : 'READY'}</span>
                   </div>
@@ -250,7 +248,7 @@ function PropertyScanner() {
                 <div className="text-right flex-shrink-0">
                   <div className="text-[#8DC63F] font-bold text-sm">{p.price}</div>
                   {active === p.id && (
-                    <div className="text-[#8DC63F]/60 font-mono text-xs mt-0.5">LOCKED</div>
+                    <div className="text-[#8DC63F]/60  text-xs mt-0.5">LOCKED</div>
                   )}
                 </div>
               </motion.div>

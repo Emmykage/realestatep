@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Building2, MapPin, ShieldCheck, Target } from 'lucide-react';
-import founder from '../../../assets/images/aka-ifeanyi.jpg';
+import founder from '../../../assets/images/akah-founder.jpeg';
 import Image from 'next/image';
 
 const locations = [
@@ -49,7 +49,7 @@ export default function FounderPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
+            <p className="mb-4 text-sm uppercase tracking-widest text-[#8DC63F]">
               Meet the Founder
             </p>
 
@@ -105,9 +105,7 @@ export default function FounderPage() {
         {/* Personal story */}
         <section className="mb-24 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
-              My Story
-            </p>
+            <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">My Story</p>
 
             <h2 className="font-display text-3xl font-bold leading-tight text-white md:text-4xl">
               Real Estate Should Begin With Understanding.
@@ -154,7 +152,7 @@ export default function FounderPage() {
             </div>
 
             <div>
-              <p className="mb-2 font-mono text-xs uppercase tracking-widest text-[#8DC63F]">
+              <p className="mb-2  text-xs uppercase tracking-widest text-[#8DC63F]">
                 Local Market Focus
               </p>
 
@@ -184,9 +182,7 @@ export default function FounderPage() {
         {/* Client commitments */}
         <section className="mb-24">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
-              My Commitment
-            </p>
+            <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">My Commitment</p>
 
             <h2 className="mb-4 font-display text-3xl font-bold text-white md:text-4xl">
               What Guides My Work
@@ -226,7 +222,7 @@ export default function FounderPage() {
 
         {/* Founder CTA */}
         <section className="rounded-3xl border border-[#8DC63F]/20 bg-[#8DC63F]/[0.05] px-6 py-12 text-center md:px-12 md:py-16">
-          <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
+          <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">
             Let’s Talk Property
           </p>
 

@@ -117,7 +117,7 @@ function HeroBanner() {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <span className="inline-block bg-[#8DC63F]/10 border border-[#8DC63F]/30 text-[#8DC63F] font-mono text-xs tracking-widest uppercase px-4 py-2 rounded-full">
+          <span className="inline-block bg-[#8DC63F]/10 border border-[#8DC63F]/30 text-[#8DC63F]  text-xs tracking-widest uppercase px-4 py-2 rounded-full">
             IKOYI • VICTORIA ISLAND • LEKKI IKOTA • CHEVRON• AJAH • IBEJU LEKKI • EPE
           </span>
         </motion.div>
@@ -208,9 +208,7 @@ function HeroBanner() {
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-2xl font-display font-bold text-[#8DC63F]">{s.value}</div>
-              <div className="text-white/40 text-xs mt-1 font-mono uppercase tracking-wider">
-                {s.label}
-              </div>
+              <div className="text-white/40 text-xs mt-1  uppercase tracking-wider">{s.label}</div>
             </div>
           ))}
         </div>

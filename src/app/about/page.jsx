@@ -98,7 +98,7 @@ export default function AboutPage() {
           <div>
             <motion.p
               variants={fadeUp}
-              className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]"
+              className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]"
             >
               About Benol Property
             </motion.p>
@@ -161,7 +161,7 @@ export default function AboutPage() {
               <div className="font-display text-3xl font-bold text-[#8DC63F] md:text-4xl">
                 {stat.value}
               </div>
-              <div className="mt-2 font-mono text-xs uppercase tracking-wider text-white/50">
+              <div className="mt-2  text-xs uppercase tracking-wider text-white/50">
                 {stat.label}
               </div>
             </motion.div>
@@ -180,9 +180,7 @@ export default function AboutPage() {
               <Target className="text-[#8DC63F]" size={24} />
             </div>
 
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[#8DC63F]">
-              Our Mission
-            </p>
+            <p className="mb-3  text-xs uppercase tracking-widest text-[#8DC63F]">Our Mission</p>
 
             <h2 className="mb-4 font-display text-2xl font-bold text-white">
               Making Property Decisions Clearer
@@ -207,9 +205,7 @@ export default function AboutPage() {
               <Globe className="text-[#8DC63F]" size={24} />
             </div>
 
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-[#8DC63F]">
-              Our Vision
-            </p>
+            <p className="mb-3  text-xs uppercase tracking-widest text-[#8DC63F]">Our Vision</p>
 
             <h2 className="mb-4 font-display text-2xl font-bold text-white">
               A More Transparent Real Estate Experience
@@ -226,9 +222,7 @@ export default function AboutPage() {
         {/* Company Story */}
         <section className="mb-24 grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
-              Who We Are
-            </p>
+            <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">Who We Are</p>
 
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -275,9 +269,7 @@ export default function AboutPage() {
         {/* Core Values */}
         <section className="mb-24">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
-              What Guides Us
-            </p>
+            <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">What Guides Us</p>
 
             <motion.h2
               initial={{ opacity: 0 }}
@@ -328,9 +320,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
-              Our Approach
-            </p>
+            <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">Our Approach</p>
 
             <h2 className="font-display text-3xl font-bold text-white">
               What You Can Expect From Us
@@ -379,7 +369,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F1114]/80 via-transparent to-transparent lg:bg-gradient-to-r" />
 
               <div className="absolute bottom-6 left-6">
-                <p className="font-mono text-xs uppercase tracking-widest text-[#8DC63F]">
+                <p className=" text-xs uppercase tracking-widest text-[#8DC63F]">
                   Meet the Founder
                 </p>
                 <h3 className="mt-2 font-display text-3xl font-bold text-white">Akah Ifeanyi</h3>
@@ -388,7 +378,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
-              <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
+              <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">
                 The Person Behind the Brand
               </p>
 
@@ -441,7 +431,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="rounded-3xl border border-[#8DC63F]/20 bg-[#8DC63F]/[0.05] px-6 py-12 text-center md:px-12 md:py-16"
         >
-          <p className="mb-4 font-mono text-sm uppercase tracking-widest text-[#8DC63F]">
+          <p className="mb-4  text-sm uppercase tracking-widest text-[#8DC63F]">
             Your Next Chapter Starts Here
           </p>
 

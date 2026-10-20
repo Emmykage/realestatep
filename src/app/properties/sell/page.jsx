@@ -36,9 +36,7 @@ export default function SellComingSoonPage() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8DC63F] opacity-50" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-[#8DC63F]" />
           </span>
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
-            Coming Soon
-          </span>
+          <span className=" text-xs uppercase tracking-[0.2em] text-[#8DC63F]">Coming Soon</span>
         </div>
 
         {/* Heading */}

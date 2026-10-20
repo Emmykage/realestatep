@@ -190,7 +190,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                 </button>
               </div>
               <VirtualTourPanel images={details.gallery} />
-              <p className="text-white/40 text-xs font-mono text-center mt-3">
+              <p className="text-white/40 text-xs  text-center mt-3">
                 Click and drag to rotate. Press ESC to close.
               </p>
             </div>
@@ -218,15 +218,13 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                     >
                       {property.type}
                     </span>
-                    <span className="text-white/40 font-mono text-xs px-2 py-1 rounded-full border border-white/10">
+                    <span className="text-white/40  text-xs px-2 py-1 rounded-full border border-white/10">
                       {details.legalStatus}
                     </span>
-                    <span className="text-white/40 font-mono text-xs">
+                    <span className="text-white/40  text-xs">
                       👁 {details.views.toLocaleString()} views
                     </span>
-                    <span className="text-white/40 font-mono text-xs">
-                      🤍 {details.saved} saved
-                    </span>
+                    <span className="text-white/40  text-xs">🤍 {details.saved} saved</span>
                   </div>
                   <h1 className="text-3xl lg:text-4xl font-display font-bold text-white leading-tight mb-2">
                     {property.title}
@@ -235,14 +233,14 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                     <span>📍</span>
                     <span>{property.location}</span>
                     <span className="ml-2 text-white/30">·</span>
-                    <span className="text-white/30 font-mono text-xs">{details.agent.listed}</span>
+                    <span className="text-white/30  text-xs">{details.agent.listed}</span>
                   </div>
                 </div>
                 <div className="flex flex-col items-end gap-2">
                   <div className="text-3xl font-display font-black" style={{ color: G }}>
                     {property.price}
                   </div>
-                  <div className="font-mono text-xs text-white/30">
+                  <div className=" text-xs text-white/30">
                     ≈ $
                     {Math.round(
                       parseInt(property.price.replace(/[^\d]/g, '')) / 1600
@@ -281,7 +279,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                   <div key={stat.label} className="flex flex-col items-center gap-1 min-w-[72px]">
                     <span className="text-xl">{stat.icon}</span>
                     <span className="text-white font-display font-bold text-sm">{stat.value}</span>
-                    <span className="text-white/40 text-xs font-mono">{stat.label}</span>
+                    <span className="text-white/40 text-xs ">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -459,7 +457,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                         borderColor: 'rgba(255,255,255,0.08)',
                       }}
                     >
-                      <div className="text-white/40 text-xs font-mono mb-4 text-center">
+                      <div className="text-white/40 text-xs  mb-4 text-center">
                         FLOOR PLAN — NOT TO SCALE · INDICATIVE ONLY
                       </div>
                       <svg
@@ -704,7 +702,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                         </g>
                       </svg>
                     </div>
-                    <p className="text-white/30 text-xs font-mono text-center mt-3">
+                    <p className="text-white/30 text-xs  text-center mt-3">
                       Floor plan is indicative. Request certified plans from your agent.
                     </p>
                   </div>
@@ -767,7 +765,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                             border: `1px solid ${card.good ? 'rgba(141,198,63,0.15)' : 'rgba(255,255,255,0.06)'}`,
                           }}
                         >
-                          <div className="text-white/40 text-xs font-mono mb-1">{card.label}</div>
+                          <div className="text-white/40 text-xs  mb-1">{card.label}</div>
                           <div
                             className="text-2xl font-display font-bold"
                             style={{ color: card.good ? G : 'white' }}
@@ -780,7 +778,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                     </div>
                     <ROICalculator basePrice={property.price} roi={details.roi} />
                     <div
-                      className="p-4 rounded-xl text-xs text-white/30 font-mono"
+                      className="p-4 rounded-xl text-xs text-white/30 "
                       style={{
                         background: 'rgba(255,255,255,0.02)',
                         border: '1px solid rgba(255,255,255,0.06)',
@@ -915,7 +913,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                             <div key={label}>
                               <div className="flex justify-between text-sm mb-1">
                                 <span className="text-white/50">{label}</span>
-                                <span className="font-mono font-bold" style={{ color: G }}>
+                                <span className=" font-bold" style={{ color: G }}>
                                   {score}/100
                                 </span>
                               </div>
@@ -1020,7 +1018,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                     <div className="text-white font-display font-bold">{details.agent.name}</div>
                     <div className="text-white/40 text-xs mt-0.5">{details.agent.title}</div>
                     {details.agent.verified && (
-                      <div className="text-xs mt-1 font-mono" style={{ color: G }}>
+                      <div className="text-xs mt-1 " style={{ color: G }}>
                         Verified Agent
                       </div>
                     )}
@@ -1135,7 +1133,7 @@ export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
                   border: '1px solid rgba(141,198,63,0.2)',
                 }}
               >
-                <div className="text-xs font-mono mb-3" style={{ color: G }}>
+                <div className="text-xs  mb-3" style={{ color: G }}>
                   INVESTMENT SNAPSHOT
                 </div>
                 <div className="grid grid-cols-3 gap-3">

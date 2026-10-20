@@ -90,7 +90,7 @@ export default function MarketReportPage() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#8DC63F]/20 bg-[#8DC63F]/5 px-4 py-2">
             <ChartNoAxesCombined size={16} className="text-[#8DC63F]" />
-            <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#8DC63F]">
+            <span className=" text-xs uppercase tracking-[0.18em] text-[#8DC63F]">
               Benol Property Research
             </span>
           </div>
@@ -151,7 +151,7 @@ export default function MarketReportPage() {
       {/* Location insights */}
       <section id="location-insights" className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-10">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+          <p className="mb-3  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
             Location Matters
           </p>
           <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
@@ -217,7 +217,7 @@ export default function MarketReportPage() {
       <section className="border-y border-white/10 bg-white/[0.02] px-6 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-2xl">
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <p className="mb-3  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               Read Beyond the Asking Price
             </p>
             <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
@@ -255,7 +255,7 @@ export default function MarketReportPage() {
       {/* Buyer checklist */}
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
         <div>
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+          <p className="mb-3  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
             Before You Commit
           </p>
           <h2 className="font-display text-3xl font-bold leading-tight text-white md:text-4xl">
@@ -291,7 +291,7 @@ export default function MarketReportPage() {
           <div className="pointer-events-none absolute -right-10 -top-16 h-64 w-64 rounded-full bg-[#8DC63F]/10 blur-[90px]" />
 
           <div className="relative">
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <p className="mb-4  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               Your Next Move
             </p>
 

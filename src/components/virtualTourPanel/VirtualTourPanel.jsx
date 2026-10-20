@@ -63,12 +63,12 @@ export default function VirtualTourPanel({ images }) {
       {/* HUD */}
       <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-none">
         <div
-          className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1.5 font-mono text-xs"
+          className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1.5  text-xs"
           style={{ color: G }}
         >
           ⟳ 360° VIRTUAL TOUR
         </div>
-        <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1.5 font-mono text-xs text-white/60">
+        <div className="bg-black/60 backdrop-blur-sm rounded-lg px-3 py-1.5  text-xs text-white/60">
           {Math.round(((angle % 360) + 360) % 360)}° · Drag to rotate
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function VirtualTourPanel({ images }) {
         </motion.div>
       </div>
       {/* Drag hint */}
-      <div className="absolute bottom-4 left-4 font-mono text-xs text-white/40 bg-black/40 rounded px-2 py-1">
+      <div className="absolute bottom-4 left-4  text-xs text-white/40 bg-black/40 rounded px-2 py-1">
         ← drag →
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function BlogPage() {
         <motion.div initial="hidden" animate="show" variants={stagger} className="mb-14">
           <motion.p
             variants={fadeUp}
-            className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-3"
+            className="text-[#8DC63F]  text-sm tracking-widest uppercase mb-3"
           >
             Insights & News
           </motion.p>
@@ -51,7 +51,7 @@ export default function BlogPage() {
               {BLOG_POSTS[0].title}
             </h2>
             <p className="text-white/60 text-sm">{BLOG_POSTS[0].excerpt}</p>
-            <div className="text-white/40 font-mono text-xs mt-3">{BLOG_POSTS[0].date}</div>
+            <div className="text-white/40  text-xs mt-3">{BLOG_POSTS[0].date}</div>
           </div>
         </motion.div>
 
@@ -81,7 +81,7 @@ export default function BlogPage() {
                   {post.title}
                 </h3>
                 <p className="text-white/50 text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                <div className="text-white/30 font-mono text-xs">{post.date}</div>
+                <div className="text-white/30  text-xs">{post.date}</div>
               </div>
             </motion.div>
           ))}

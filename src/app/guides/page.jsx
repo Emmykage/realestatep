@@ -131,7 +131,7 @@ export default function GuidesPage() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#8DC63F]/20 bg-[#8DC63F]/5 px-4 py-2">
             <BookOpen size={15} className="text-[#8DC63F]" />
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <span className=" text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               Benol Property Guides
             </span>
           </div>
@@ -189,7 +189,7 @@ export default function GuidesPage() {
       <section id="all-guides" className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <p className="mb-3  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               The Knowledge Hub
             </p>
             <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
@@ -221,10 +221,10 @@ export default function GuidesPage() {
                     <Icon size={22} className="text-[#8DC63F]" />
                   </div>
 
-                  <span className="font-mono text-sm text-white/25">{guide.number}</span>
+                  <span className=" text-sm text-white/25">{guide.number}</span>
                 </div>
 
-                <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.15em] text-[#8DC63F]">
+                <p className="mb-3  text-[10px] uppercase tracking-[0.15em] text-[#8DC63F]">
                   {guide.category}
                 </p>
 
@@ -272,7 +272,7 @@ export default function GuidesPage() {
           <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full bg-[#8DC63F]/10 blur-[90px]" />
 
           <div className="relative">
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
+            <p className="mb-4  text-xs uppercase tracking-[0.2em] text-[#8DC63F]">
               Need a little more guidance?
             </p>
 

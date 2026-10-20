@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { NAV_LINKS } from '../constants/global';
 import { useRouter } from 'next/navigation';
 import { FaPhoneAlt } from 'react-icons/fa';
+import logo from '../assets/logo/logo-transparent.png';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,22 +43,17 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.08)' : 'none',
       }}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
-        <button
-          onClick={() => navTo('/')}
-          className="flex items-center gap-2"
-          aria-label="Benol Realty home"
-        >
-          <div className="flex h-7 w-7 items-center justify-center rounded bg-[#8DC63F] text-sm font-black text-black">
-            O
-          </div>
 
-          <span className="font-display text-lg font-bold text-white">
-            <span className="font-black">Benol</span>{' '}
-            <span className="font-normal text-white/70">Realty</span>
-          </span>
-        </button>
+        <div className="relative h-full w-40">
+          <Image
+            src={logo}
+            className="w-full h-full absolute object-cover scale-80 mt-2"
+            alt="logo"
+            onClick={() => navTo('/')}
+          />
+        </div>
 
         {/* Desktop navigation */}
         <div className="hidden items-center gap-8 md:flex">
@@ -137,11 +134,11 @@ export default function Navbar() {
 
           {/* Phone */}
           <a
-            href="tel:+2348050480659"
+            href="tel:+2348131529888"
             className="flex items-center gap-2 text-sm font-semibold text-[#8DC63F]"
           >
             <FaPhoneAlt />
-            +234 805 048 0659
+            +234 813 152 9888
           </a>
         </div>
 
@@ -251,11 +248,11 @@ export default function Navbar() {
 
               {/* Mobile phone */}
               <a
-                href="tel:+2348050480659"
+                href="tel:+2348131529888"
                 className="flex items-center gap-2 py-3 text-sm font-semibold text-[#8DC63F]"
               >
                 <FaPhoneAlt />
-                +234 805 048 0659
+                +234 813 152 9888
               </a>
             </div>
           </motion.div>

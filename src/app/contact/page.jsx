@@ -1,149 +1,391 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { useState } from 'react';
+import Link from 'next/link';
+import {
+  ArrowDownRight,
+  ArrowRight,
+  Clock3,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  ShieldCheck,
+} from 'lucide-react';
 
-const offices = [
-  { city: 'New York', addr: '340 Park Avenue, NY 10022', phone: '+1 (212) 555-0100' },
-  { city: 'Los Angeles', addr: '9000 Wilshire Blvd, CA 90212', phone: '+1 (310) 555-0200' },
-  { city: 'Miami', addr: '1111 Brickell Ave, FL 33131', phone: '+1 (305) 555-0300' },
+const contactDetails = [
+  {
+    icon: Phone,
+    label: 'Call our team',
+    value: '+234 813 152 9888',
+    href: 'tel:+2348131529888',
+  },
+  {
+    icon: Mail,
+    label: 'Send us an email',
+    value: 'contact@benolproperty.com',
+    href: 'mailto:contact@benolproperty.com',
+  },
+  {
+    icon: Clock3,
+    label: 'Working hours',
+    value: 'Monday – Saturday',
+    detail: 'Contact us to arrange a convenient time.',
+  },
+];
+
+const interests = [
+  'Buying a property',
+  'Selling a property',
+  'Land investment',
+  'Renting a property',
+  'Property investment advice',
+  'General enquiry',
 ];
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    interest: 'Buying a property',
+    location: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setForm((current) => ({
+      ...current,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const message = [
+      'Hello Benol Property, I would like to make an enquiry.',
+      '',
+      `Name: ${form.firstName} ${form.lastName}`,
+      `Email: ${form.email}`,
+      `Phone: ${form.phone || 'Not provided'}`,
+      `Interest: ${form.interest}`,
+      `Preferred location: ${form.location || 'Not specified'}`,
+      '',
+      `Message: ${form.message}`,
+    ].join('\n');
+
+    const whatsappUrl = `https://wa.me/2348131529888?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const inputClass =
+    'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white placeholder:text-white/30 outline-none transition focus:border-[#8DC63F]/70 focus:ring-2 focus:ring-[#8DC63F]/10';
+
+  const labelClass = 'mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-white/55';
+
   return (
-    <div className="pt-20 min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-slate-50 border-b border-slate-100 py-16 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="section-eyebrow">Talk to us</p>
-          <h1 className="section-heading">Get in touch</h1>
-          <p className="text-slate-500 mt-4 text-lg">
-            No automated replies. A real agent responds within two business hours.
-          </p>
+    <main className="min-h-screen overflow-hidden bg-[#0F1114] pt-24 text-white">
+      {/* Hero */}
+      <section className="relative border-b border-white/[0.07]">
+        <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#8DC63F]/10 blur-[120px]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+          <div className="mb-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#8DC63F]">
+            <span className="h-px w-8 bg-[#8DC63F]" />
+            Contact Benol Property
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+            <div>
+              <h1 className="max-w-4xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-6xl lg:text-7xl">
+                Your next property decision
+                <span className="block text-[#8DC63F]">starts with a conversation.</span>
+              </h1>
+
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/55 sm:text-lg">
+                Looking to buy, sell or invest in Lagos real estate? Tell us what you have in mind.
+                We’ll help you explore your options and take the next step with greater clarity.
+              </p>
+            </div>
+
+            <a
+              href="https://wa.me/2348131529888"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex w-fit items-center gap-3 rounded-full border border-[#8DC63F]/30 bg-[#8DC63F]/10 px-5 py-4 text-sm font-semibold text-[#8DC63F] transition hover:bg-[#8DC63F]/15"
+            >
+              <MessageCircle size={19} />
+              Chat with us on WhatsApp
+              <ArrowDownRight
+                size={17}
+                className="transition group-hover:translate-x-1 group-hover:translate-y-1"
+              />
+            </a>
+          </div>
+
+          <div className="mt-14 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/10 pt-6 text-sm text-white/45">
+            <span className="flex items-center gap-2">
+              <ShieldCheck size={17} className="text-[#8DC63F]" />
+              Informed property decisions
+            </span>
+            <span className="flex items-center gap-2">
+              <MapPin size={17} className="text-[#8DC63F]" />
+              Focused on the Lagos property market
+            </span>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Form */}
-          <div>
-            <h2 className="font-display text-2xl font-bold text-slate-900 mb-8">
-              Send us a message
-            </h2>
-            <div className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
+      {/* Contact content */}
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+          {/* Enquiry form */}
+          <div className="rounded-3xl border border-white/10 bg-[#15191D] p-6 sm:p-9 lg:p-10">
+            <div className="mb-8">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8DC63F]">
+                Let’s talk property
+              </p>
+
+              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                Tell us what you’re looking for.
+              </h2>
+
+              <p className="mt-3 text-sm leading-6 text-white/45">
+                Share a few details and continue your enquiry with our team on WhatsApp.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                    First name
+                  <label htmlFor="firstName" className={labelClass}>
+                    First name *
                   </label>
                   <input
-                    type="text"
-                    placeholder="Jane"
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
+                    id="firstName"
+                    name="firstName"
+                    value={form.firstName}
+                    onChange={handleChange}
+                    placeholder="Your first name"
+                    autoComplete="given-name"
+                    required
+                    className={inputClass}
                   />
                 </div>
+
                 <div>
-                  <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                    Last name
+                  <label htmlFor="lastName" className={labelClass}>
+                    Last name *
                   </label>
                   <input
-                    type="text"
-                    placeholder="Smith"
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
+                    id="lastName"
+                    name="lastName"
+                    value={form.lastName}
+                    onChange={handleChange}
+                    placeholder="Your last name"
+                    autoComplete="family-name"
+                    required
+                    className={inputClass}
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="email" className={labelClass}>
+                    Email address *
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="you@example.com"
+                    autoComplete="email"
+                    required
+                    className={inputClass}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className={labelClass}>
+                    Phone number
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="+234 ..."
+                    autoComplete="tel"
+                    className={inputClass}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                  Email address
+                <label htmlFor="interest" className={labelClass}>
+                  How can we help? *
                 </label>
-                <input
-                  type="email"
-                  placeholder="jane@example.com"
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                  I&apos;m interested in
-                </label>
-                <select className="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all">
-                  <option>Buying a property</option>
-                  <option>Selling a property</option>
-                  <option>Renting</option>
-                  <option>General enquiry</option>
+                <select
+                  id="interest"
+                  name="interest"
+                  value={form.interest}
+                  onChange={handleChange}
+                  className={`${inputClass} appearance-none`}
+                >
+                  {interests.map((interest) => (
+                    <option key={interest} value={interest} className="bg-[#15191D] text-white">
+                      {interest}
+                    </option>
+                  ))}
                 </select>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                  Message
+                <label htmlFor="location" className={labelClass}>
+                  Preferred location
+                </label>
+                <input
+                  id="location"
+                  name="location"
+                  value={form.location}
+                  onChange={handleChange}
+                  placeholder="e.g. Lekki, Ikoyi, Victoria Island"
+                  className={inputClass}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className={labelClass}>
+                  Your message *
                 </label>
                 <textarea
+                  id="message"
+                  name="message"
                   rows={5}
-                  placeholder="Tell us about your goals, timeline, or preferred neighborhoods..."
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all resize-none"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your budget, goals or the property you have in mind..."
+                  required
+                  className={`${inputClass} resize-y`}
                 />
               </div>
 
               <button
-                type="button"
-                className="w-full btn-primary justify-center py-4 text-base rounded-xl"
+                type="submit"
+                className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#8DC63F] px-6 py-4 text-sm font-bold text-[#10140B] transition hover:bg-[#9DD64F] focus:outline-none focus:ring-2 focus:ring-[#8DC63F] focus:ring-offset-2 focus:ring-offset-[#15191D]"
               >
-                Send message
+                Continue on WhatsApp
+                <ArrowRight size={18} className="transition group-hover:translate-x-1" />
               </button>
-            </div>
+
+              <p className="text-center text-xs leading-5 text-white/35">
+                Your message will open in WhatsApp for you to review and send.
+              </p>
+            </form>
           </div>
 
-          {/* Contact info */}
-          <div className="space-y-10">
+          {/* Contact information */}
+          <aside className="flex flex-col gap-10 lg:py-4">
             <div>
-              <h2 className="font-display text-2xl font-bold text-slate-900 mb-6">
-                Direct contact
-              </h2>
-              <div className="space-y-4">
-                {[
-                  { icon: Phone, label: 'Call us', value: '+1 (555) 010-0200' },
-                  { icon: Mail, label: 'Email us', value: 'hello@BenolProperty.com' },
-                  { icon: Clock, label: 'Office hours', value: 'Mon – Fri, 8am – 7pm EST' },
-                ].map((c, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
-                    <div className="w-10 h-10 bg-slate-900 rounded-lg flex items-center justify-center shrink-0">
-                      <c.icon size={16} className="text-gold-400" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                        {c.label}
-                      </p>
-                      <p className="text-slate-800 font-medium mt-0.5">{c.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#8DC63F]">
+                Get in touch
+              </p>
+              <h2 className="text-2xl font-semibold sm:text-3xl">Prefer a direct conversation?</h2>
+              <p className="mt-4 max-w-lg text-sm leading-7 text-white/50">
+                Reach out using any of the contact details below. Whether you’re buying your first
+                home or exploring an investment, we’re happy to hear from you.
+              </p>
             </div>
 
-            <div>
-              <h3 className="font-display text-xl font-bold text-slate-900 mb-5">Our offices</h3>
-              <div className="space-y-4">
-                {offices.map((o, i) => (
+            <div className="space-y-3">
+              {contactDetails.map((item) => {
+                const Icon = item.icon;
+
+                return (
                   <div
-                    key={i}
-                    className="flex items-start gap-3 pb-4 border-b border-slate-100 last:border-0"
+                    key={item.label}
+                    className="flex items-start gap-4 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:border-[#8DC63F]/30"
                   >
-                    <MapPin size={14} className="text-gold-500 mt-1 shrink-0" />
-                    <div>
-                      <p className="font-semibold text-slate-800 text-sm">{o.city}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{o.addr}</p>
-                      <p className="text-xs text-slate-400">{o.phone}</p>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8DC63F]/10 text-[#8DC63F]">
+                      <Icon size={19} />
+                    </div>
+
+                    <div className="min-w-0">
+                      <p className="text-xs font-medium text-white/40">{item.label}</p>
+
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="mt-1 block break-words text-sm font-medium text-white transition hover:text-[#8DC63F]"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-sm font-medium text-white">{item.value}</p>
+                      )}
+
+                      {item.detail && (
+                        <p className="mt-1 text-xs leading-5 text-white/35">{item.detail}</p>
+                      )}
                     </div>
                   </div>
-                ))}
+                );
+              })}
+            </div>
+
+            {/* Office address */}
+            <div className="relative overflow-hidden rounded-2xl border border-[#8DC63F]/20 bg-[#8DC63F]/[0.06] p-6 sm:p-7">
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full border border-[#8DC63F]/10" />
+              <div className="absolute -right-2 -top-2 h-20 w-20 rounded-full border border-[#8DC63F]/10" />
+
+              <div className="relative">
+                <div className="mb-5 flex items-center gap-3">
+                  <MapPin size={20} className="text-[#8DC63F]" />
+                  <h3 className="font-semibold">Visit our office</h3>
+                </div>
+
+                <p className="max-w-sm text-sm leading-7 text-white/60">
+                  Office 3, Magnuel Emporium Plaza,
+                  <br />
+                  Canaan Estate, Sangotedo,
+                  <br />
+                  Lagos, Nigeria.
+                </p>
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Magnuel+Emporium+Plaza+Canaan+Estate+Sangotedo+Lagos"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#8DC63F] transition hover:text-[#B0E76C]"
+                >
+                  Get directions
+                  <ArrowRight size={16} />
+                </a>
               </div>
             </div>
-          </div>
+
+            {/* Closing CTA */}
+            <div className="border-t border-white/10 pt-7">
+              <p className="text-sm leading-6 text-white/45">Still exploring your options?</p>
+
+              <Link
+                href="/properties"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#8DC63F]"
+              >
+                Explore available properties
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </aside>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

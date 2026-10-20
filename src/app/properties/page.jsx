@@ -24,7 +24,7 @@ function PropertiesPage() {
         <motion.div initial="hidden" animate="show" variants={stagger} className="mb-12">
           <motion.p
             variants={fadeUp}
-            className="text-[#8DC63F] font-mono text-sm tracking-widest uppercase mb-3"
+            className="text-[#8DC63F]  text-sm tracking-widest uppercase mb-3"
           >
             Listings
           </motion.p>
