@@ -521,7 +521,7 @@ export default function HomePage() {
               whileTap={{ scale: 0.96 }}
               className="px-8 py-4 rounded-xl font-bold text-white border border-white/20 backdrop-blur-md hover:bg-white/10 transition-all"
             >
-              +234 805 048 0659
+              +234 813 152 9888
             </motion.button>
           </motion.div>
         </div>
