@@ -1,5 +1,4 @@
-import { label } from 'framer-motion/client';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, ArrowUpRight, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../assets/logo/logo-transparent.png';
@@ -12,86 +11,107 @@ const footerLinks = {
     { label: 'Press', link: '/blog' },
   ],
   Properties: [
-    { label: 'Buy', link: '/properties?type=buy' },
-    { label: 'Rent', link: '/properties?type=rent' },
-    { label: 'Sell', link: '/properties/sell' },
+    { label: 'Buy a Property', link: '/properties?type=buy' },
+    { label: 'Rent a Property', link: '/properties?type=rent' },
+    { label: 'Sell a Property', link: '/properties/sell' },
     { label: 'New Builds', link: '/properties?type=new-builds' },
   ],
   Resources: [
-    { label: 'Blog', link: '/blog' },
-    { label: 'Guides', link: '/guides' },
+    { label: 'Blog & Insights', link: '/blog' },
+    { label: 'Property Guides', link: '/guides' },
     { label: 'Market Report', link: '/market-report' },
-    { label: 'FAQ', link: '/faq' },
+    { label: 'FAQs', link: '/faq' },
   ],
 };
+
+const contactDetails = [
+  {
+    icon: Phone,
+    value: '+234 813 152 9888',
+    href: 'tel:+2348131529888',
+  },
+  {
+    icon: Mail,
+    value: 'contact@benolproperty.com',
+    href: 'mailto:contact@benolproperty.com',
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="border-t border-[#E7E9E1] bg-[#F7F8F2] text-[#20251B]">
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10 lg:px-8 lg:py-20">
         {/* Brand */}
-        <div className="lg:col-span-2 space-y-5">
-          <Link href="/" className="block relative h-20 w-40">
+        <div className="space-y-6 sm:col-span-2 lg:col-span-2">
+          <Link href="/" aria-label="Benol Property home" className="inline-flex h-20">
             <Image
               src={logo}
-              className="w-full h-full absolute object-cover scale-80 mt-2"
-              alt="logo"
+              alt="Benol Property"
+
+              className="h-full w-44 object-cover mt-1"
             />
           </Link>
 
-          <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
-            Helping discerning buyers and sellers navigate premium real estate since 2008. Trust
-            built on results.
+          <p className="max-w-sm text-sm leading-7 text-[#70756A]">
+            Helping you make informed property decisions through market knowledge, transparent
+            information and a more considered approach to real estate in Lagos.
           </p>
 
-          <div className="space-y-2.5 text-sm">
-            <a
-              href="tel:+15550100200"
-              className="flex items-center gap-2.5 hover:text-white transition-colors"
-            >
-              <Phone size={14} className="text-gold-400 shrink-0" />
-              +2348131529888{' '}
-            </a>
-            <a
-              href="mailto:contact@benolProperty.com"
-              className="flex items-center gap-2.5 hover:text-white transition-colors"
-            >
-              <Mail size={14} className="text-gold-400 shrink-0" />
-              contact@BenolProperty.com
-            </a>
-            <span className="flex items-center gap-2.5">
-              <MapPin size={14} className="text-gold-400 shrink-0" />
-              Office 3, Magnuel Emporium plaza, Canaan Estate Sangotedo, Lagos, Nigeria{' '}
-            </span>
-          </div>
-
-          <div className="flex gap-3 pt-1">
-            {[].map((Icon, i) => (
+          <div className="space-y-4">
+            {contactDetails.map(({ icon: Icon, value, href }) => (
               <a
-                key={i}
-                href="#"
-                className="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-colors"
+                key={href}
+                href={href}
+                className="group flex w-fit items-center gap-3 text-sm text-[#52594C] transition hover:text-[#557D22]"
               >
-                <Icon size={14} />
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#E4E8DB] bg-white text-[#719F32] shadow-sm transition group-hover:border-[#8DC63F]/60 group-hover:bg-[#EFF6E5]">
+                  <Icon size={16} />
+                </span>
+                {value}
               </a>
             ))}
+
+            <div className="flex items-start gap-3 text-sm leading-6 text-[#70756A]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#E4E8DB] bg-white text-[#719F32] shadow-sm">
+                <MapPin size={16} />
+              </span>
+              <span className="max-w-xs pt-1">
+                Office 3, Magnuel Emporium Plaza, Canaan Estate, Sangotedo, Lagos, Nigeria
+              </span>
+            </div>
           </div>
+
+          <a
+            href="https://wa.me/2348131529888"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#8DC63F] px-5 py-3 text-sm font-semibold text-[#17200E] shadow-sm transition hover:bg-[#9AD64C] hover:shadow-md"
+          >
+            Talk to our team
+            <ArrowUpRight size={16} />
+          </a>
         </div>
 
-        {/* Link columns */}
+        {/* Navigation */}
         {Object.entries(footerLinks).map(([category, links]) => (
           <div key={category}>
-            <h4 className="text-xs font-semibold tracking-widest uppercase text-white mb-4">
+            <h2 className="mb-6 text-xs font-bold uppercase tracking-[0.16em] text-[#30382A]">
               {category}
-            </h4>
-            <ul className="space-y-2.5">
+            </h2>
+
+            <ul className="space-y-4">
               {links.map(({ link, label }) => (
                 <li key={link}>
                   <Link
                     href={link}
-                    className="text-sm text-slate-400 hover:text-white transition-colors"
+                    className="group inline-flex items-center gap-1 text-sm text-[#74796F] transition-colors hover:text-[#557D22]"
                   >
                     {label}
+                    <ArrowRight
+                      size={13}
+                      className="opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
+                    />
                   </Link>
                 </li>
               ))}
@@ -101,20 +121,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© 2025 BenolProperty Inc. All rights reserved.</p>
-          <div className="flex gap-5">
-            <Link href="#" className="hover:text-slate-300 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-slate-300 transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="#" className="hover:text-slate-300 transition-colors">
-              Cookie Settings
-            </Link>
-          </div>
+      <div className="border-t border-[#E3E6DC] bg-white/70">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-xs text-[#858A7F] sm:flex-row sm:items-center sm:justify-between lg:px-8">
+          <p>© {new Date().getFullYear()} Benol Property. All rights reserved.</p>
+
+          <p className="flex items-center gap-2">
+            Real estate, with greater clarity.
+            <span className="h-2 w-2 rounded-full bg-[#8DC63F]" />
+          </p>
         </div>
       </div>
     </footer>

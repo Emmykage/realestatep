@@ -43,13 +43,13 @@ export default function Navbar() {
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.08)' : 'none',
       }}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-17 max-w-7xl items-center justify-between px-6">
         {/* Logo */}
 
-        <div className="relative h-full w-40">
+        <div className="relative h-full w-44 bg-white">
           <Image
             src={logo}
-            className="w-full h-full absolute object-cover scale-80 mt-2"
+            className="w-full h-full absolute object-cover scale-105 mt-2"
             alt="logo"
             onClick={() => navTo('/')}
           />
