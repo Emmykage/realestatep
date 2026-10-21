@@ -325,7 +325,7 @@ export default function ContactPage() {
                 return (
                   <div
                     key={item.label}
-                    className="flex items-start gap-4 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:border-[#8DC63F]/30"
+                    className="flex items-start gap-4 rounded-2xl border border-white/8 bg-white/2.5 p-5 transition hover:border-[#8DC63F]/30"
                   >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8DC63F]/10 text-[#8DC63F]">
                       <Icon size={19} />
@@ -355,7 +355,7 @@ export default function ContactPage() {
             </div>
 
             {/* Office address */}
-            <div className="relative overflow-hidden rounded-2xl border border-[#8DC63F]/20 bg-[#8DC63F]/[0.06] p-6 sm:p-7">
+            <div className="relative overflow-hidden rounded-2xl border border-[#8DC63F]/20 bg-[#8DC63F]/6 p-6 sm:p-7">
               <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full border border-[#8DC63F]/10" />
               <div className="absolute -right-2 -top-2 h-20 w-20 rounded-full border border-[#8DC63F]/10" />
 
