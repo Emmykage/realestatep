@@ -12,6 +12,7 @@ import {
   Phone,
   ShieldCheck,
 } from 'lucide-react';
+import { MdEmail } from 'react-icons/md';
 
 const contactDetails = [
   {
@@ -111,19 +112,19 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <a
-              href="https://wa.me/2348131529888"
+            {/* <a
+  href="mailto:contact@benolproperty.com"
               target="_blank"
               rel="noreferrer"
               className="group flex w-fit items-center gap-3 rounded-full border border-[#8DC63F]/30 bg-[#8DC63F]/10 px-5 py-4 text-sm font-semibold text-[#8DC63F] transition hover:bg-[#8DC63F]/15"
             >
-              <MessageCircle size={19} />
-              Chat with us on WhatsApp
+              <MdEmail size={19} />
+              Send us an Email
               <ArrowDownRight
                 size={17}
                 className="transition group-hover:translate-x-1 group-hover:translate-y-1"
               />
-            </a>
+            </a> */}
           </div>
 
           <div className="mt-14 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/10 pt-6 text-sm text-white/45">
@@ -281,7 +282,7 @@ export default function ContactPage() {
                 type="submit"
                 className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#8DC63F] px-6 py-4 text-sm font-bold text-[#10140B] transition hover:bg-[#9DD64F] focus:outline-none focus:ring-2 focus:ring-[#8DC63F] focus:ring-offset-2 focus:ring-offset-[#15191D]"
               >
-                Continue on WhatsApp
+                Send Message
                 <ArrowRight size={18} className="transition group-hover:translate-x-1" />
               </button>
 
@@ -303,6 +304,19 @@ export default function ContactPage() {
                 home or exploring an investment, we’re happy to hear from you.
               </p>
             </div>
+            {/* <a
+              href="mailto:contact@benolproperty.com"
+              target="_blank"
+              rel="noreferrer"
+              className="group flex w-fit items-center gap-3 rounded-full border border-[#8DC63F]/30 bg-[#8DC63F]/10 px-5 py-4 text-sm font-semibold text-[#8DC63F] transition hover:bg-[#8DC63F]/15"
+            >
+              <MdEmail size={19} />
+              Send us an Email
+              <ArrowDownRight
+                size={17}
+                className="transition group-hover:translate-x-1 group-hover:translate-y-1"
+              />
+            </a> */}
 
             <div className="space-y-3">
               {contactDetails.map((item) => {
@@ -323,7 +337,7 @@ export default function ContactPage() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="mt-1 block break-words text-sm font-medium text-white transition hover:text-[#8DC63F]"
+                          className="mt-1 block wrap-break-word text-sm font-medium text-white transition hover:text-[#8DC63F]"
                         >
                           {item.value}
                         </a>

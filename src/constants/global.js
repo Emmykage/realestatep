@@ -5,7 +5,6 @@ export const NAV_LINKS = [
     sub: [
       { link: 'about', label: 'About the Company' },
       { link: 'about/founder', label: 'About Founder' },
-      { link: 'contact', label: 'Contact' },
     ],
   },
   { link: 'properties', label: 'Properties' },
@@ -13,4 +12,5 @@ export const NAV_LINKS = [
   //   { link: 'for-rent', label: 'For Rent' },
   //   { label: 'Shortlet', link: 'shortlet' },
   { label: 'Blog', link: 'blog' },
+  { link: 'contact', label: 'Contact' },
 ];
