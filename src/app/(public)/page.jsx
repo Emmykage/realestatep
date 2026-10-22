@@ -1,12 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { Heart, Shield, TrendingUp, Users } from 'lucide-react';
-import StatsRow from '../components/StatsRow';
+import StatsRow from '../../components/StatsRow';
 
-import HeroBanner from '../components/hero/Hero';
+import HeroBanner from '../../components/hero/Hero';
 import { motion } from 'framer-motion';
-import { BLOG_POSTS, PROPERTIES } from '../data';
-import PropertyScanner from '../components/propertyScanner/PropertyScanner';
+import { BLOG_POSTS, PROPERTIES } from '../../data';
+import PropertyScanner from '../../components/propertyScanner/PropertyScanner';
 import { useRouter } from 'next/navigation';
 
 const featuredProperties = [

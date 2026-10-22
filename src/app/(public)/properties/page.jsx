@@ -1,7 +1,7 @@
 'use client';
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 import { useState } from 'react';
-import { PROPERTIES } from '../../data';
+import { PROPERTIES } from '../../../data';
 import { useRouter } from 'next/navigation';
 
 function PropertiesPage() {

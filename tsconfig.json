@@ -34,7 +34,7 @@
     "src/app/propertiesi/page.jsx",
     "src/app/about/page.jsx",
     "src/app/contact/page.jsx",
-    "src/app/page.jsx"
+    "src/app/(public)/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

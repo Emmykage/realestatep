@@ -1,11 +1,11 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import VirtualTourPanel from '../../../components/virtualTourPanel/VirtualTourPanel';
-import { PROPERTIES, PROPERTY_DETAILS } from '../../../data';
+import VirtualTourPanel from '../../../../components/virtualTourPanel/VirtualTourPanel';
+import { PROPERTIES, PROPERTY_DETAILS } from '../../../../data';
 import { useParams } from 'next/navigation';
 import { useRef, useState } from 'react';
-import Lightbox from '../../../components/lightBox';
-import ROICalculator from '../../../components/ROICalculator';
+import Lightbox from '../../../../components/lightBox';
+import ROICalculator from '../../../../components/ROICalculator';
 
 export default function PropertyDetailPage({ setPage, setSelectedProperty }) {
   const { id } = useParams();

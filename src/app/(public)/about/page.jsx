@@ -3,7 +3,7 @@
 import { Award, Globe, Heart, Lightbulb, ShieldCheck, BookOpen, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import { STATS } from '../../data';
+import { STATS } from '../../../data';
 
 const team = [
   { name: 'Claire Weston', role: 'Founder & CEO', initials: 'CW', bg: '#1E293B', text: '#F59E0B' },

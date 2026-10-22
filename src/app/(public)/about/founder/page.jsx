@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Building2, MapPin, ShieldCheck, Target } from 'lucide-react';
-import founder from '../../../assets/images/akah-founder.jpeg';
+import founder from '../../../../assets/images/akah-founder.jpeg';
 import Image from 'next/image';
 
 const locations = [

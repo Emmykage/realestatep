@@ -1,5 +1,5 @@
 'use client';
-import { BLOG_POSTS } from '../../data';
+import { BLOG_POSTS } from '../../../data';
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 export default function BlogPage() {
   const fadeUp = {
