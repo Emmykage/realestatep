@@ -21,6 +21,7 @@ import {
   X,
   ChevronDown,
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const initialProperties = [
   {
@@ -126,6 +127,7 @@ const formatPrice = (price, type) => {
 };
 
 export default function AdminPropertiesPage() {
+  const router = useRouter();
   const [properties, setProperties] = useState(initialProperties);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
@@ -377,8 +379,9 @@ export default function AdminPropertiesPage() {
           >
             {filteredProperties.map((property) => (
               <article
+                onClick={() => router.push(`/admin/properties/${property.id}`)}
                 key={property.id}
-                className={`group overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${
+                className={`cursor-pointer group overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${
                   view === 'List' ? 'flex flex-col sm:flex-row' : ''
                 }`}
               >

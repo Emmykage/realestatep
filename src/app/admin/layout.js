@@ -8,7 +8,7 @@ export default async function AdminLayout({ children }) {
   const accessToken = cookieStore.get('access_token')?.value;
 
   if (!accessToken) {
-    redirect('/admin/login');
+    redirect('/login');
   }
   return (
     <div className="min-h-screen bg-[#f7f9fc] text-slate-800">
